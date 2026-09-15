@@ -18,21 +18,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Сборка презентации через официальный action Marp
-      - name: Build Marp Presentation to HTML
-        uses: marp-team/marp-action@v3
+      # Установка стабильного окружения Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          args: Презентация_План_СТРПО.md -o index.html
+          node-version: 20
 
-      # Также делаем копию slides.html для артефакта задания №8
-      - name: Prepare artifacts
+      # Сборка слайдов официальным Marp CLI с флагом --html (чтобы работали боксы def и warn)
+      - name: Build presentation with Marp CLI
+        run: |
+          npx --yes @marp-team/marp-cli@latest --html Презентация_План_СТРПО.md -o index.html
+
+      # Подготовка файлов: копия для задания 8 и папка для GitHub Pages (задание 10)
+      - name: Prepare site and artifacts
         run: |
           mkdir -p _site
           cp index.html slides.html
           mv index.html _site/
           cp -r pic _site/
 
-      # Задание 8: Загрузка артефакта slides.html (будет доступен для скачивания)
+      # Задание 8: Загрузка артефакта slides.html
       - name: Upload slides artifact
         uses: actions/upload-artifact@v4
         with:
