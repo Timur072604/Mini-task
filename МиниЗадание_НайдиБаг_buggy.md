@@ -219,7 +219,7 @@ h2 { color: #2e7d5b; }
 
 ---
 
-<!-- _class: stories -->
+<!-- _class: story -->
 
 ## ☕ Перерыв 5 минут
 
