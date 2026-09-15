@@ -50,7 +50,7 @@ h2 { color: #2e7d5b; }
 
 <!-- _class: story -->
 
-![bg right:35% fit](pic/slaid_3.jfif)
+![bg right:35% fit](pic/slide_3.jfif)
 
 ## 💸 История: Knight Capital, 2012
 
