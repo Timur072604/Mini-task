@@ -1,6 +1,6 @@
 ---
 marp: true
-paginat: true
+paginate: true
 footer: Кедрин В.С., СТРПО, 2026
 ---
 
